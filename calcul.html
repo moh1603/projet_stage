@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculatrice + -</title>
+    <style>
+        body {
+            background-color: lightcyan;
+            display: flex;
+            justify-content: center;   /* centre horizontalement */
+            align-items: center;       /* centre verticalement */
+            height: 100vh;             /* prend toute la hauteur */
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .cadre {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        input {
+            width: 120px;
+            padding: 8px;
+            margin: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        h3 {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <button class="back" onclick="history.back()">← Retour</button>
+    <style>
+        .back {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px 18px;
+            border-radius: 10px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            background: #333;
+            color: white;
+        }
+    </style>
+<div class="cadre">
+    <h2>Calculatrice</h2>
+
+    <input type="number" id="nombre1">
+    <input type="number" id="nombre2">
+
+    <br><br>
+
+    <button onclick="addition()">+</button>
+    <button onclick="soustraction()">-</button>
+    <button onclick="multiplication()">*</button>
+    <button onclick="division()">/</button>
+
+    <h3>Résultat : <span id="resultat"></span></h3>
+</div>
+
+<script>
+function addition() {
+    var n1 = Number(document.getElementById("nombre1").value);
+    var n2 = Number(document.getElementById("nombre2").value);
+    document.getElementById("resultat").textContent = n1 + n2;
+}
+
+function soustraction() {
+    var n1 = Number(document.getElementById("nombre1").value);
+    var n2 = Number(document.getElementById("nombre2").value);
+    document.getElementById("resultat").textContent = n1 - n2;
+}
+
+function multiplication() {
+    var n1 = Number(document.getElementById("nombre1").value);
+    var n2 = Number(document.getElementById("nombre2").value);
+    document.getElementById("resultat").textContent = n1 * n2;
+}
+
+function division() {
+    var n1 = Number(document.getElementById("nombre1").value);
+    var n2 = Number(document.getElementById("nombre2").value);
+    if (n2 !== 0) {
+        document.getElementById("resultat").textContent = n1 / n2;
+    } else {
+        document.getElementById("resultat").textContent = "Erreur : division par zéro";
+    }
+}
+</script>
+
+</body>
+</html>
