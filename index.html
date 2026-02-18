@@ -1,84 +1,113 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ma Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Moh1603</title>
 
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            background: #19dbd1; /* couleur unique du fond */
+            background: linear-gradient(135deg, #1f4037, #99f2c8);
+            overflow: hidden;
         }
 
         .card {
-            background: white;
-            padding: 60px 80px;
-            border-radius: 20px;
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 25px;
+            padding: 70px 90px;
             text-align: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            color: white;
+            animation: fadeIn 1s ease forwards;
         }
 
-        h1 { color: #333; margin-bottom: 40px; font-size: 30px; }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
 
-        .container { display: flex; gap: 30px; justify-content: center; }
+        p {
+            opacity: 0.9;
+            margin-bottom: 40px;
+            font-size: 18px;
+        }
+
+        .container {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+        }
 
         .btn {
-            padding: 20px 45px;
-            font-size: 20px;
+            padding: 18px 50px;
+            font-size: 18px;
             border: none;
-            border-radius: 12px;
+            border-radius: 50px;
             cursor: pointer;
             font-weight: bold;
             color: white;
-            background: #2f80ed;
-            transition: 0.2s;
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
         }
 
-        .btn:nth-child(2) { background: #27ae60; }
-        .btn:hover { transform: scale(1.05); }
+        .btn:nth-child(2) {
+            background: linear-gradient(135deg, #396afc, #2948ff);
+        }
 
-        .back {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            padding: 10px 18px;
-            border-radius: 10px;
-            border: none;
-            font-weight: bold;
-            cursor: pointer;
-            background: #333;
-            color: white;
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(0,0,0,0.4);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         @media (max-width: 768px) {
-            .container { flex-direction: column; gap: 20px; }
+            .card {
+                padding: 40px;
+            }
+
+            .container {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
 
     <div class="card">
-        <h1>Bienvenue sur ma page.                  
-            Voici mes deux projets :
-        </h1>
+        <h1>Bienvenue 👋</h1>
+        <p>Découvrez mes projets réalisés en développement web.</p>
+
         <div class="container">
-            <button class="btn" onclick="ouvrirCV()"><a href="cv.html">CV</a> </button>
-            
-            <button class="btn" onclick="ouvrirCalculatrice()"><a href="calcul.html">Calculatrice</a> </button>
-            
+            <button class="btn" onclick="window.location.href='cv.html'">
+                Voir mon CV
+            </button>
+
+            <button class="btn" onclick="window.location.href='calcul.html'">
+                Ouvrir la Calculatrice
+            </button>
         </div>
     </div>
-    <script>
-        function ouvrirCV() { window.location.href = "cv.html"; }
-        function ouvrirCalculatrice() { window.location.href = "calcul.html"; }
-    </script>
 
 </body>
 </html>
